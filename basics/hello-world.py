@@ -4,5 +4,7 @@ print(msg)
 print(anoth)
 a=input("Please supply me with a number") #this is a comment, just like the bash shell
 print("The number you entered is",a)
+#I want to learn python before I move on to c#
+
 
 
