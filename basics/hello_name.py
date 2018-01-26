@@ -7,3 +7,5 @@ temp=float(temp)
 faren=32+((9/5)*temp)
 
 print("Your name is",o_name,"and the temprature is",faren, "farenheight")
+#lets see what
+import math
