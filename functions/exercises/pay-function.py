@@ -5,6 +5,8 @@
 error="Please enter a numerical value for both the pay and the rate per hour"
 hours=input("Please enter the number of hours you worked")
 rate=input("Please enter the rate of pay per hour")
+
+
 try:
     hours=float(hours)
     rate=float(rate)
@@ -28,7 +30,6 @@ try:
     wage(hours,rate)
 except:
     pass
-
 
 
 
