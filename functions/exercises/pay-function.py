@@ -24,8 +24,7 @@ def wage(a,b):
         
     elif a<0 or b<0:
         print("Please enter a positive number for both rate and pay")
-        
-
+    
 try:
     wage(hours,rate)
 except:
