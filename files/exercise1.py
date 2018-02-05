@@ -14,6 +14,7 @@ try:
    fhand=open(prompt)
 except:
     print("The file you have specified does not exist")
+    exit()
 
 small=fhand.read()
 print (type(small))
