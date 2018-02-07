@@ -19,8 +19,11 @@ for line in fhand:
     line.strip()
     words.extend(line.split())
 
+set_w=(set(words))
+#print(set_w)
+back=list(set_w)
+back.sort()
+print(back)
 
-words.sort()
-print(words)
 
     
