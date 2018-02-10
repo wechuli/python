@@ -33,5 +33,11 @@ for a in words:
         mycount[a]=1
     else:
         mycount[a]+=1
-a=max(mycount)
-print(a,mycount[a])
+ert=mycount.values()
+# print(ert)
+max_val=(max(ert))
+for number in mycount:
+    if mycount[number]==max_val:
+        print(number,max_val)
+    else:
+        continue
