@@ -1,4 +1,4 @@
-import PartyAnimal
+from party import PartyAnimal
 
 class CricketFan(PartyAnimal):
     points=0
