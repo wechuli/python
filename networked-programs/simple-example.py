@@ -1,8 +1,8 @@
 import socket
 
 mysock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-mysock.connect(('mozilla-splash-page20180216122052.azurewebsites.net', 80))
-cmd = 'GET http://mozilla-splash-page20180216122052.azurewebsites.net/ HTTP/1.0\r\n\r\n'.encode()
+mysock.connect(('python.org', 80))
+cmd = 'GET https://docs.python.org/3/library/socket.html HTTP/1.0\r\n\r\n'.encode()
 mysock.send(cmd)
 
 while True:
