@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\basics"
+    "\\basics",
+    "\\dictionaries",
+    "\\iteration",
+    "\\regular-expression"
   ],
-  "SelectedNode": "\\basics\\hello_name.py",
+  "SelectedNode": "\\dictionaries\\counting-words.py",
   "PreviewInSolutionExplorer": false
 }
