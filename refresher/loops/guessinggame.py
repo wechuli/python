@@ -23,4 +23,5 @@ while True:
     if option in ['y', 'yeah', 'yes', 'ya']:
         continue
     else:
+        print('Thank you for taking part in this useless game, goodbye')
         break
