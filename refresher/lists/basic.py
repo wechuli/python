@@ -9,4 +9,4 @@ print(girls[2])
 print(girls[-1])
 
 
-print('Paul' in girls)
+print('Pauline' in girls)
