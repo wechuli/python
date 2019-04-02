@@ -23,7 +23,7 @@ locations = {
 
 print(locations[(35.685, 39.6917)])
 
-# some dictionary methods will return dictionaries
+# some dictionary methods will return tuples
 cat = {
     "name": "Black",
     "age": 25,
