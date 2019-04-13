@@ -1,6 +1,4 @@
-
-
-def list_manipulation(mylist, command, location, value):
+def list_manipulation(mylist, command, location, value=None):
     if command == 'remove':
         if location == 'end':
             return mylist[0:-1]
@@ -11,12 +9,21 @@ def list_manipulation(mylist, command, location, value):
     elif command == 'add':
         if value:
             if location == 'end':
-                return mylist.insert(-1, value)
+                mylist.append(value)  # remember that lists are mutable
+                return mylist
             elif location == 'beginning':
-                return mylist.insert(0, value)
+                mylist.insert(0, value)
+                return mylist
             else:
                 return 'Invalid location'
 
         else:
             return 'You need to provide a value'
-    
+    else:
+        return 'Invalid command'
+
+
+print(list_manipulation([1, 2, 3], 'add', 'end', 45))
+print(list_manipulation([1, 2, 3], 'add', 'beginning', 45))
+print(list_manipulation([1, 2, 3], 'remove', 'end'))
+print(list_manipulation([1, 2, 3], 'remove', 'beginning'))
