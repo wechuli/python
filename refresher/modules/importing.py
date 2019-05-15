@@ -12,6 +12,11 @@ from random import randint as ri
 
 
 while True:
-    print(ri(1, 456))
+    print(ri(1,  456))
 
+
+
+# When you use import, Python
+# Tries to find the module(if it fails it throws an error)
+# Runs the code inside of the module being imported
 
