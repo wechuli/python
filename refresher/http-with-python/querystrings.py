@@ -11,9 +11,9 @@ base_url = 'https://icanhazdadjoke.com/search'
 # response = requests.get(url, headers={'Accept': 'text/plain'})
 
 response = requests.get(
-    base_url, headers={'Accept': 'application/json'}, params={"term": "dad", "limit": 20})
+    base_url, headers={'Accept': 'application/json'}, params={"term": "dadaasss", "limit": 20})
 data = response.json()
 
-# print(data)
+print(data['results'])
 
 pprint.pprint(json.loads(json.dumps(data)))
