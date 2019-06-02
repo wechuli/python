@@ -1,3 +1,4 @@
+# The __repr__ method is one of several ways to provide a nicer string representation
 # Class methods are methods(with the @classmethod decorator) that are not concerned with instances, but the class itself
 
 
@@ -13,11 +14,15 @@ class User:
         first, last, age = data_str.split(",")
         return cls(first, last, int(age))
 
+    # returns a better string representastion of the instance
     def __init__(self, first, last, age):
         self._first = first
         self._last = last
         self._age = age
         User.active_users += 1  # we can change the class attributes
+
+    def __repr__(self):
+        return f"{self._first} {self._last}"
 
     def logout(self):
         User.active_users -= 1
@@ -40,21 +45,7 @@ class User:
         return f'Happy {self._age}th birthday, {self._first}'
 
 
-tom = User.from_string("Paul,Wechuli,25")
-
-
-print(User.active_users)
-print(User.display_active_users())
-# print(tom.first)
-
-# print(tom.initials())
-basic_user = User('Joe', 'Black', 85)
-
-# basic_user2 = User('Jane', 'Doe', 29)
-# # print(User.active_users)
-# # # basic_user.logout()
-# # print(User.active_users)
-
-# print(User.display_active_users())
-# basic_user2 = User('Jennifer', 'Dame', 29)
-# print(User.display_active_users())
+Paul = User("Paul", "Wechuli", 26)
+Jess = User("Jess", "Kabii", 25)
+print(str(Jess))
+print(type(Paul))
