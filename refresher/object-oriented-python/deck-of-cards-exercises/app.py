@@ -15,10 +15,8 @@ class Deck:
     values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
     def __init__(self):
-        self._cards = []
-        for suit in Deck.suits:
-            for value in Deck.values:
-                self._cards.append(Card(suit, value))
+        self._cards = [Deck(suit, value)
+                       for suit in Deck.suits for value in Deck.values]
 
     def count(self):
         return len(self._cards)
