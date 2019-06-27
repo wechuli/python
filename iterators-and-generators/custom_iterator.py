@@ -16,6 +16,8 @@ class Counter:
         raise StopIteration
 
 
-for x in Counter(50, 70):
+new_counter = Counter(3, 10)
+for x in new_counter:
     print(x)
-
+# for x in Counter(50, 70):
+#     print(x)
