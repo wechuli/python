@@ -18,3 +18,10 @@ An object which will return an iterator when iter() is called on it
 ## NEXT
 
 When next() is called on an iterator, the iterator returns the next item. It keeps doing so until it raises a StopIteration error
+
+## Generators
+- Generators are iterators
+- Generators can be created with generator functions
+- Generator functions use the yield keyword
+- Generators can be created with generator expressions
+
