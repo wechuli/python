@@ -43,3 +43,29 @@ To run a file with doctests
 - Clutters up our function code
 - Lacks many features or larger testing tools
 - Tests can be brittle
+
+## Unit Testing
+- Test smallest part of an application in isolation(e.g. units)
+- Good candidates for unit testing: individual classes, modules or functions
+- Bad candidates for unit testing: an entire application, dependencies across several classes or modules
+
+### unittest framework
+In built module for testing 
+You can write unit tests encapsulated as classes that inherit from `unittest.TestCase`
+This inheritence gives you access to may assertion helpers that let you test the behaviour of your functions.
+You can run tests by calling `unittest.main()`
+
+To run tests with more information, add docstrings to your testing methods and use the `-v` flag when executing the test file.
+
+#### Other Types of Assertions
+- `self.assertEqual(x,y)`
+- `self.assertNotEqual(x,y)`
+- `self.assertTrue(x)`
+- `self.assertFalse(x)`
+- `self.assertIsNone(x)`
+- `self.assertIsNotNone(x)`
+- `self.assertIn(x,y)`
+- `self.assertNotIn(x,y)`
+- ..more
+
+
