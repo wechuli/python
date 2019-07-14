@@ -69,3 +69,8 @@ To run tests with more information, add docstrings to your testing methods and u
 - ..more
 
 
+### Before and After Hooks
+- For larger applications, you may want similar application state before running tests
+- `setUp` runs before each test method
+- `tearDown` runs after each test method
+- Common use cases: adding/removing data from a test database, creating instances of a class
