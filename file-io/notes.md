@@ -25,3 +25,13 @@ You can close a file with the close method
 You can check if a file is closed with the closed attribute
 Once closed, a file can't be read again
 Always close files - it frees up system resources!
+
+## File Modes
+
+- 'r' - open for reading
+- 'w' - open for writing, truncating the file first
+- 'x' - open for exclusive creation, failing if the file already exists
+- 'a' - open for writing, appengin to the end of the file if it exists
+- 'b' - binary mode
+- 't' - text mode(default)
+- '+' - text mode(default)
