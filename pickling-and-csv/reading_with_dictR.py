@@ -6,4 +6,3 @@ with open("fighters.csv") as file:
     for row in csv_reader:
         
         print(row)
-
