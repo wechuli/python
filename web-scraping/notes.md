@@ -1,0 +1,6 @@
+- BeautifulSoup(html_string,"html.parser") - parse HTML
+- Once parsed. There are several ways to navigate
+    - By Tag Name
+    - Using find - returns one matching tag
+    - Using find_all - returns a list of matching tags
+    - We can use CSS selectors to navigate
