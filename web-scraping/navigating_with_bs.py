@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+
 html = """
 <!DOCTYPE html>
 <html lang="en">
@@ -11,23 +12,27 @@ html = """
     <h3 data-example="yes">hi</h3>
     <p>more text.</p>
   </div>
-  <ol>
+  <ol class="super-special">
     <li class="special">This list item is special.</li>
+     <li>This list item is not special.</li>
     <li class="special">This list item is also special.</li>
-    <li>This list item is not special.</li>
+   
   </ol>
   <div data-example="yes">bye</div>
 </body>
 </html>
 """
+soup = BeautifulSoup(html, 'html.parser')
+data = soup.body.contents
+# print(data)
+# print(data[1].next_sibling)
 
-soup = BeautifulSoup(html, "html.parser")
-# print(soup.body)
-# print(soup.find("div"))
-# print(soup.find_all("div"))
-print(soup.find_all(class_="special"))
-print(soup.find_all(attrs={"data-example": "yes"}))
-# print(soup.find(id="first"))
-# d = soup.select("[data-example]")
-# print(d)
+data2 = soup.find(class_='super-special').parent.parent
+# print(data2)
 
+
+data3 = soup.find(id="first").find_next_sibling()
+# print(data3)
+
+data4 = soup.select("[data-example]")[1].find_previous_sibling()
+print(data4)
