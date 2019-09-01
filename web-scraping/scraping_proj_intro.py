@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 from csv import reader, writer
 import time
+import 
 
 
 alldata = list()
@@ -15,7 +16,7 @@ for page_number in range(1, 10):
 
     time.sleep(2)
 # print(response.text)
-
+time.
 
 soup = BeautifulSoup(response.text, "html.parser")
 articles = soup.find_all('article')
