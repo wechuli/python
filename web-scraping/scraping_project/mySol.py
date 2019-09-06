@@ -6,7 +6,7 @@ import random
 
 # the base url
 
-base_url = "http://quotes.toscrape.com/"
+base_url = "http://quotes.toscrape.com"
 
 # get all the html for the quotes
 
