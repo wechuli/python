@@ -7,7 +7,7 @@ html = """
   <title>First HTML Page</title>
 </head>
 <body>
-  <div id="first">
+  <div id="first" class="special">
     <h3 data-example="yes">hi</h3>
     <p>more text.</p>
   </div>
@@ -24,5 +24,8 @@ html = """
 soup = BeautifulSoup(html, "html.parser")
 
 d = soup.select("#first")
-d = soup.select(".special")
+d = soup.select(".special")[0].select("h3")[0].get_text()
+
+data4 = soup.select("[data-example]")[1]
 print(d)
+print(data4.attrs['data-example'])
