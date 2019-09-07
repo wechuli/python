@@ -12,7 +12,7 @@ base_url = "http://quotes.toscrape.com"
 
 page = 1
 allquotes = ""
-while(True):
+while True:
     response = requests.get(f'{base_url}/page/{page}').text
     allquotes = allquotes + response
     print(f'{page * (".")}')
@@ -38,15 +38,49 @@ for quote in quotes:
 # Choose one dictionary(quote) randomly from the list - , when qoute is chosen, reach out to the author page and get
 # several hints concerning the author of this quote
 
-quote_question = random.choice(formatted_quotes)
-print(quote_question)
 
 # prompt the user to guess who this quote is from
 
-# decrease a counter for every wrong guess
 
-# After each wrong guess, reach out to the author bio page (through the bio link stored in the dictionary) and give hints
+while True:
 
-# If user guesses incorrectly to the end, end game and give them the answer, also ask if they would like to play again, choose another random quote and start again
+    quote_question = random.choice(formatted_quotes)
+    author = quote_question.get('author')
+    author_link = quote_question.get('link')
+    print(author)
+    print('..............................................')
+    print(quote_question.get('quote'))
+    user_guess = input("Who said the above quote: ")
+    if user_guess == quote_question.get('author'):
+        print(f'You are right, {author} said it!')
+        play_again = input("Do you want to play again? y or n: ")
+        if play_again == 'y':
+            continue
+        else:
+            break
 
-# If user guesses correctly within the allowed 4 guesses, stop the game, inform the user that they have won and prompt them if they would like to play again.
+    else:
+        author_details_raw = requests.get(
+            f'http://quotes.toscrape.com{author_link}').text
+        author_soup = BeautifulSoup(author_details_raw, 'html.parser')
+
+        author_dob = author_soup.select('.author-born-date')[0].get_text()
+        author_birth_location = author_soup.select(
+            '.author-born-location')[0].get_text()
+        author_first_name = author_soup.select(
+            '.author-title')[0].get_text().split(' ')[0]
+        author_last_name = author_soup.select(
+            '.author-title')[0].get_text().split(' ')[1]
+        
+
+
+        while number_of_guesses < 4:
+            # store the hints in a list and each time, move through them and if 
+
+            # decrease a counter for every wrong guess
+
+            # After each wrong guess, reach out to the author bio page (through the bio link stored in the dictionary) and give hints
+
+            # If user guesses incorrectly to the end, end game and give them the answer, also ask if they would like to play again, choose another random quote and start again
+
+            # If user guesses correctly within the allowed 4 guesses, stop the game, inform the user that they have won and prompt them if they would like to play again.
