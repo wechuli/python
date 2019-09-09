@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import time
 import requests
 import random
+from random import shuffle
 
 
 # the base url
@@ -68,19 +69,33 @@ while True:
         author_birth_location = author_soup.select(
             '.author-born-location')[0].get_text()
         author_first_name = author_soup.select(
-            '.author-title')[0].get_text().split(' ')[0]
+            '.author-title')[0].get_text().split(' ')[0][0]
         author_last_name = author_soup.select(
-            '.author-title')[0].get_text().split(' ')[1]
-        
+            '.author-title')[0].get_text().split(' ')[1][0]
 
+        hints = [f'The author was born on {author_dob}', f'The author was born  {author_birth_location}',
+                 f'The first name of the author begins with {author_first_name}', f'The last name of the author starts with {author_last_name}']
+        shuffle(hints)
+        number_of_guesses = 0
 
         while number_of_guesses < 4:
-            # store the hints in a list and each time, move through them and if 
+            print("......")
+            print(
+                f"Oops, wrong answer, here is a hint for you, after this hint you will be left with {3-number_of_guesses} tries")
+            print(hints[number_of_guesses])
+            user_guess = input("Any clue yet who the author of the quote is: ")
+            if user_guess == author:
+                print(f"Hooray, you got it, the author is {author}")
+                break
+            number_of_guesses += 1
+        
+        print(number_of_guesses)
+        if number_of_guesses == 4:
+            print(
+                f"Sorry, GAME OVER, the author of the quote was {author},Tuff, better luck next time.")
+        play_again_resp = input("Do you want to play again? y or n: ")
 
-            # decrease a counter for every wrong guess
-
-            # After each wrong guess, reach out to the author bio page (through the bio link stored in the dictionary) and give hints
-
-            # If user guesses incorrectly to the end, end game and give them the answer, also ask if they would like to play again, choose another random quote and start again
-
-            # If user guesses correctly within the allowed 4 guesses, stop the game, inform the user that they have won and prompt them if they would like to play again.
+        if play_again_resp in ("y", "yes", "Y", "YES"):
+            continue
+        else:
+            break
