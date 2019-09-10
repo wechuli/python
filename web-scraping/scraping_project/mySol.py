@@ -1,8 +1,6 @@
 from bs4 import BeautifulSoup
-import time
 import requests
-import random
-from random import shuffle
+from random import shuffle,choice
 
 
 # the base url
@@ -45,7 +43,7 @@ for quote in quotes:
 
 while True:
 
-    quote_question = random.choice(formatted_quotes)
+    quote_question = choice(formatted_quotes)
     author = quote_question.get('author')
     author_link = quote_question.get('link')
     print(author)
@@ -54,11 +52,6 @@ while True:
     user_guess = input("Who said the above quote: ")
     if user_guess == quote_question.get('author'):
         print(f'You are right, {author} said it!')
-        play_again = input("Do you want to play again? y or n: ")
-        if play_again == 'y':
-            continue
-        else:
-            break
 
     else:
         author_details_raw = requests.get(
@@ -88,14 +81,14 @@ while True:
                 print(f"Hooray, you got it, the author is {author}")
                 break
             number_of_guesses += 1
-        
+
         print(number_of_guesses)
         if number_of_guesses == 4:
             print(
                 f"Sorry, GAME OVER, the author of the quote was {author},Tuff, better luck next time.")
-        play_again_resp = input("Do you want to play again? y or n: ")
 
-        if play_again_resp in ("y", "yes", "Y", "YES"):
-            continue
-        else:
-            break
+    play_again_resp = input("Do you want to play again? y or n: ")
+    if play_again_resp in ("y", "yes", "Y", "YES"):
+        continue
+    else:
+        break
