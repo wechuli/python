@@ -17,3 +17,17 @@
 - **\W** - not a word character
 - **\S** - not a whitespace character
 - **.** - any character except line break
+- **+** - One or more
+- **{3}** - Exactly x times. {3} - 3 times
+- **{3,5}** - Three to five times
+- **{4,}** - Four or more times
+- `*` - Zero or more times
+- **?** - Once or none(optional)
+- **^** -Start of string or line
+- **$** - End of string or line
+- **\b** - Word boundary
+- **|** - logical or
+- **( )** - used to capture groups
+
+
+
