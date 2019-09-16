@@ -1,7 +1,10 @@
-# Exercise 5: This program records the domain name (instead of the address) where
-# the message was sent from instead of who the mail came from (i.e., the whole email
-# address). At the end of the program, print out the contents of your dictionary.
-# python schoolcount.py
-# Enter a file name: mbox-short.txt
-# {'media.berkeley.edu': 4, 'uct.ac.za': 6, 'umich.edu': 7,
-# 'gmail.com': 1, 'caret.cam.ac.uk': 1, 'iupui.edu': 8}
+inventory = {'croissant': 19, 'bagel': 4, 'muffin': 8, 'cake': 1}
+# Make a copy of inventory and save it to a variable called stock_list USE A DICTIONARY METHOD
+stock_list = {}
+stock_list.update(inventory)
+stock_list["cookie"] = 18
+print(stock_list)
+
+stock_list.pop("cake")
+
+print(stock_list)
