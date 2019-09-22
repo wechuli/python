@@ -1,5 +1,33 @@
 # Tests
 
+A unit is a small piece of code generally part of a larger system. It could be -
+
+- a method or a function
+- a module or class
+- a small group of related classes
+
+An automated Unit test is designed by a human. Runs without intervention and Reports either 'pass' or fail.
+
+It's not a unit test if it uses:
+
+- the Filesystem
+- a Database
+- the Network
+
+## Test Suite
+
+Test suite is a container that has a set of tests which helps testers in executing and reporting the test execution status.A test case can be added to multiple test suites and test plans. After creating a test plan, test suites are created which in turn can have any number of tests.
+
+### Text Fixture
+
+A software test fixture sets up the system fo the testing process by providing it with all the necessary code to initialize it, thereby satisfying whatever preconditions there may be. An example could be loading up a database with knwon parameters from a customer site before running your test.
+
+### Three Parts of a Test
+
+- **Arrange** - Set up the object to be tested and colaborators
+- **Act** - Exercise the unit under test
+- **Assert** - Make claims about what happened
+
 ## Why Test
 
 - Reduce bugs in existing code
@@ -45,12 +73,14 @@ To run a file with doctests
 - Tests can be brittle
 
 ## Unit Testing
+
 - Test smallest part of an application in isolation(e.g. units)
 - Good candidates for unit testing: individual classes, modules or functions
 - Bad candidates for unit testing: an entire application, dependencies across several classes or modules
 
 ### unittest framework
-In built module for testing 
+
+In built module for testing
 You can write unit tests encapsulated as classes that inherit from `unittest.TestCase`
 This inheritence gives you access to may assertion helpers that let you test the behaviour of your functions.
 You can run tests by calling `unittest.main()`
@@ -58,6 +88,7 @@ You can run tests by calling `unittest.main()`
 To run tests with more information, add docstrings to your testing methods and use the `-v` flag when executing the test file.
 
 #### Other Types of Assertions
+
 - `self.assertEqual(x,y)`
 - `self.assertNotEqual(x,y)`
 - `self.assertTrue(x)`
@@ -68,8 +99,8 @@ To run tests with more information, add docstrings to your testing methods and u
 - `self.assertNotIn(x,y)`
 - ..more
 
-
 ### Before and After Hooks
+
 - For larger applications, you may want similar application state before running tests
 - `setUp` runs before each test method
 - `tearDown` runs after each test method
