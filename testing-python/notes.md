@@ -16,11 +16,19 @@ It's not a unit test if it uses:
 
 ## Test Suite
 
-Test suite is a container that has a set of tests which helps testers in executing and reporting the test execution status.A test case can be added to multiple test suites and test plans. After creating a test plan, test suites are created which in turn can have any number of tests.
+Test suite is a container that has a set of tests which helps testers in executing and reporting the test execution status.A test case can be added to multiple test suites and test plans. After creating a test plan, test suites are created which in turn can have any number of tests. A test suite is a collection of test cases, test suites, or both. It is used to aggregate tests that should be executed together.
 
-### Text Fixture
+### Test Fixture
 
-A software test fixture sets up the system fo the testing process by providing it with all the necessary code to initialize it, thereby satisfying whatever preconditions there may be. An example could be loading up a database with knwon parameters from a customer site before running your test.
+A software test fixture sets up the system fo the testing process by providing it with all the necessary code to initialize it, thereby satisfying whatever preconditions there may be. An example could be loading up a database with knwon parameters from a customer site before running your test. A test fixture represents the preparation needed to perform one or more tests an any associate cleanup actions. This may involve, for example, creating temporary or proxy databases, directories or starting a server process.
+
+### Test case
+
+A test case is the individual unit of testing. It checks for a specific response to a particular set of inputs. `unittest` provides a base class, `TestCase`, which may be used to create new test cases.
+
+### test runner
+
+A test runner is a component which orchestrates the execution of tests and provides the outcome to the user. The runner may use a graphical interface, a textual interface, or return a special value to indicate the results of executing the tests.
 
 ### Three Parts of a Test
 
@@ -33,6 +41,9 @@ A software test fixture sets up the system fo the testing process by providing i
 - Reduce bugs in existing code
 - Ensure bugs that are fixed stay fixed
 - Ensure that new features don't break old ones
+- Unit tests help you to understand what to build
+- Help to document the units
+- Helps in designing the units
 - Ensure that cleaning up code doesn't introduce new bugs
 
 ## Test Driven Development
@@ -105,3 +116,41 @@ To run tests with more information, add docstrings to your testing methods and u
 - `setUp` runs before each test method
 - `tearDown` runs after each test method
 - Common use cases: adding/removing data from a test database, creating instances of a class
+
+### Documenting the Units
+
+- Specify the behavious of the unit under test
+- How the original developer intended the unit to be used
+- Executable: keeps in sync with the unit inder test
+
+### Unit Test help with better design of the units
+
+- Decompose into testable units. Loose Coupling and High Cohesion
+- Design interface interface and implementation separately
+
+### Regression
+
+Ensure previously developed and tested software still performs after a change.
+
+### Limitations of Unit Testing
+
+- Hard to write if units have many dependencies
+- Test scenarios may not occur in production, you need to find relevant cases
+- Tests may not notice failures
+- Unit tests do not find integration or non-functional problems
+
+Unit testing is part of your job. Fit automated test in your development process.
+
+### Tests Support Collaboration
+
+- Pull changes from version control
+- Run the tests and check they pass before changing code
+- Run the tests again before sharing your changes
+
+### Build Automation Server
+- Detects changes from version control, fetches them
+- Builds the code and runs the tests
+- Communicates the result to developers
+- If passing tests- deploys to manual testing environment
+
+Make frequent, small commits and run tests on each one.
